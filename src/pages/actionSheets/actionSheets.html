@@ -1,18 +1,14 @@
 <ion-header>
-  <ion-navbar>
-  	<button ion-button menuToggle icon-only>
+  <ion-navbar hideBackButton>
+    <button ion-button menuToggle icon-only>
       <ion-icon name='menu'></ion-icon>
     </button>
 
     <ion-title>
-      Home2
+      Action Sheets
     </ion-title>
 
     <ion-buttons end>
-    	<button ion-button icon-only>
-        <ion-icon name="search"></ion-icon>
-      </button>
-
       <button ion-button icon-only (click)="logout()">
         <ion-icon name="exit"></ion-icon>
       </button>
@@ -21,6 +17,7 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button (click)="logout()">Logout</button>
-  <p>{{ email }}</p>
+  <button ion-button block (click)="openActionSheet()">
+    Show Action Sheet
+  </button>
 </ion-content>

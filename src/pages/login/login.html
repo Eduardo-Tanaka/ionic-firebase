@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label fixed>Username</ion-label>
+    <ion-input type="text" value="" [(ngModel)]="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Password</ion-label>
+    <ion-input type="password" [(ngModel)]="senha"></ion-input>
+  </ion-item>
+
+  <button ion-button (click)="logar()">Logar</button>
+
+  <button ion-button (click)="logarFacebook()">FACEBOOK</button>
+
+  <button ion-button (click)="logarGoogle()">GOOGLE</button>
+
+  <button ion-button (click)="linkRecuperar()">esqueci minha senha</button>
+</ion-content>

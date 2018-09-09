@@ -1,0 +1,72 @@
+<!-- side => left, right, direção em que o menu abre
+  persistent => persiste o menu nas outras páginas
+  content => vem do ion-nav abaixo
+  type => overlay, reveal, push
+  enabled => true/false, habilita o sidemenu
+  id => id do elemento
+  swipeEnabled => true/false -->
+  
+<!-- diretivas menuClose e menuToggle -->
+<ion-menu side="left" [content]="sidemenu" persistent="true" id="mySideMenu">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Side Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list no-lines>
+    	<ion-list-header>
+	      Classes
+	    </ion-list-header>
+
+      <button ion-item menuClose (click)="openPage('ActionSheetsPage')">
+      	<ion-icon name='arrow-up' item-start></ion-icon>
+        Action Sheets
+        <ion-note item-end>
+	      	4
+	      </ion-note>
+      </button>
+
+      <ion-item menuClose (click)="openPage('HomePage')">
+      	<ion-icon name='alert' item-start></ion-icon>
+        Alerts
+        <ion-note item-end>
+	      	To the moon
+	      </ion-note>
+      </ion-item>
+
+      <ion-item menuClose (click)="openPage(eventsPage)">
+        <ion-icon name='albums' item-start></ion-icon>
+        Badges
+      </ion-item>
+
+      <ion-item menuClose (click)="openPage(friendsPage)">
+      	<ion-icon name='radio-button-on' item-start></ion-icon>
+        Buttons
+      </ion-item>
+    </ion-list>
+
+    <ion-list no-border>
+    	<ion-list-header>
+	      Classes
+	    </ion-list-header>
+
+      <ion-item (click)="openPage('homePage')">
+      	<ion-icon name='menu' item-start></ion-icon>
+        Home
+      </ion-item>
+
+      <ion-item (click)="openPage('friendsPage')">
+        Friends
+      </ion-item>
+
+      <ion-item menuClose>
+	        Close Menu
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- #sidemenu valor vai para o content do ion-menu -->
+<ion-nav [root]="rootPage" #sidemenu swipeBackEnabled="false"></ion-nav>
